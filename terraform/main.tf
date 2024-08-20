@@ -30,8 +30,8 @@ resource "yandex_compute_instance" "web" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.subnet.id
-    nat       = true
+    subnet_id          = yandex_vpc_subnet.subnet.id
+    nat                = true
     security_group_ids = [yandex_vpc_security_group.vm_sg.id]
   }
 
@@ -55,21 +55,21 @@ resource "yandex_vpc_security_group" "vm_sg" {
   network_id = yandex_vpc_network.vpc.id
 
   egress {
-    protocol = "ANY"
+    protocol       = "ANY"
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    protocol = "TCP"
+    protocol       = "TCP"
     v4_cidr_blocks = ["0.0.0.0/0"]
-    from_port = 22
-    to_port   = 22
+    from_port      = 22
+    to_port        = 22
   }
 
   ingress {
-    protocol = "TCP"
+    protocol       = "TCP"
     v4_cidr_blocks = ["0.0.0.0/0"]
-    from_port = 80
-    to_port   = 80
+    from_port      = 80
+    to_port        = 80
   }
 }
