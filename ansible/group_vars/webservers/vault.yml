@@ -1,0 +1,13 @@
+vault_redmine_db_postgres: "rc1a-8mww0zhpbvux1wqf.mdb.yandexcloud.net"
+vault_redmine_db_database: "redmine"
+vault_redmine_db_username: "redmine"
+vault_redmine_db_port: "6432"
+vault_redmine_db_password: "redmine_password"
+
+vault_inventory_hostname: "nutakoe.ru"
+
+vault_datadog_api_key: "014525e817703002920aee8fbce7cb9f"
+
+
+
+#bd5ae842ff08e28df08ee95c16438309
