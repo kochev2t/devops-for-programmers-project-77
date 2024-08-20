@@ -22,11 +22,9 @@
       pip:
         name: docker
 
-
 - hosts: all
   become: yes
   tags: deploy
-  
   tasks:
     - name: Запустить Redmine в контейнере
       community.docker.docker_container:
@@ -44,7 +42,6 @@
           REDMINE_DB_PORT: "{{ redmine_db_port }}"
           REDMINE_DB_DATABASE: "{{ redmine_db_database }}"
       become: true
-       
 
 - hosts: webservers
   roles:
