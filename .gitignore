@@ -6,4 +6,3 @@ key.*
 *.tfstate
 *.lock.hcl
 ansible_vars.json
-*.j2

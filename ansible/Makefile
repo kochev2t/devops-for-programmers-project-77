@@ -2,7 +2,7 @@ install:
 	ansible-galaxy install -r requirements.yml
 
 inventory:
-	ansible-playbook -i ../ansible/inventory.ini -v generate_inventory.yml
+	ansible-playbook -i inventory.ini -v generate_inventory.yml
 
 setup:
 	ansible-playbook -i inventory.ini --tags setup --vault-password-file vault_password playbook.yml

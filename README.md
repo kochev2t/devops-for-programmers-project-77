@@ -3,11 +3,15 @@
 
 ### Команды
 
-Инициализация terraform: `make init`
+Инициализация Terraform: `make init`
 
-Создание структуры terraform: `make apply`
+Создание структуры Terraform: `make apply`
 
-Удаление структуры terraform: `make destroy`
+Генерация выходных данных Terraform в формате JSON для дальнейшего использования в плейбуке Ansible: `make output`
+
+Удаление инфраструктуры Terraform: `make destroy`
+
+Генерация инвентаря для Ansible: `make inventary`
 
 Установка ролей: `make install`
 
