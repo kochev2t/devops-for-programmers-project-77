@@ -53,7 +53,6 @@ resource "yandex_alb_load_balancer" "project-balancer" {
     }
     http {
       handler {
-        http_router_id = yandex_alb_http_router.example.id
         http_to_https {
           enabled = true
         }
