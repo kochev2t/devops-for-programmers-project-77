@@ -13,3 +13,6 @@
       template:
         src: vault.yml.j2
         dest: ../ansible/group_vars/webservers/vault.yml
+
+    - name: Запуск Makefile для шифрования vault.yml
+      command: make encrypt
