@@ -54,7 +54,7 @@ resource "yandex_alb_load_balancer" "project-balancer" {
     http {
       handler {
         redirects {
-          scheme = "https"
+          http_to_https = true
         }
       }
     }
