@@ -53,7 +53,9 @@ resource "yandex_alb_load_balancer" "project-balancer" {
     }
     http {
       handler {
-        http_router_id = yandex_alb_http_router.lb-router.id
+        redirects {
+          scheme = "https"
+        }
       }
     }
   }

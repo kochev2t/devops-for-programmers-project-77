@@ -1,0 +1,15 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    ansible_vars: "{{ lookup('file', 'ansible_vars.json') | from_json }}"
+    
+  tasks:
+    - name: Генерация файла inventory.ini
+      template:
+        src: inventory.ini.j2
+        dest: ../ansible/inventory.ini
+
+    - name: Генерация файла vault.yml
+      template:
+        src: vault.yml.j2
+        dest: ../ansible/group_vars/webservers/vault.yml

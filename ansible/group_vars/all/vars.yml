@@ -7,4 +7,3 @@ datadog_checks:
         timeout: 15
         min_collection_interval: 30   
 
-

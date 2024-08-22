@@ -1,23 +1,17 @@
 init:
-	terraform -chdir=terraform init
+	make -C terraform init
 
 apply:
-	terraform -chdir=terraform apply
+	make -C terraform apply
 
 destroy:
-	terraform -chdir=terraform destroy
+	make -C terraform destroy
 
 install:
-	ansible-galaxy install -r ansible/requirements.yml
+	make -C ansible install
 
 deploy:
-	ansible-playbook -i ansible/inventory.ini --tags deploy --vault-password-file ansible/vault_password ansible/playbook.yml
+	make -C ansible deploy
 
 monitoring:
-	ansible-playbook -i ansible/inventory.ini --tags datadog --vault-password-file ansible/vault_password ansible/playbook.yml
-
-encrypt:
-	ansible-vault encrypt --vault-password-file ansible/vault_password ansible/group_vars/webservers/vault.yml
-
-decrypt:
-	ansible-vault decrypt --vault-password-file ansible/vault_password ansible/group_vars/webservers/vault.yml
+	make -C ansible monitoring

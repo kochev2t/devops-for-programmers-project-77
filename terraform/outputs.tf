@@ -42,3 +42,13 @@ output "db_host" {
   value       = yandex_mdb_postgresql_cluster.project-db.host.0.fqdn
   #sensitive   = true
 }
+
+# output "yc-web-server-0" {
+#   description = "IP of the first server"
+#   value       = yandex_compute_instance.yc-web-server-0.ipv4_address
+# }
+
+# output "yc-web-server-1" {
+#   description = "IP of the second server"
+#   value       = yandex_compute_instance.yc-web-server-1.ipv4_address
+# }
