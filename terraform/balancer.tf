@@ -52,10 +52,8 @@ resource "yandex_alb_load_balancer" "project-balancer" {
       ports = [80]
     }
     http {
-      handler {
-        http_to_https {
-          enabled = true
-        }
+      redirects {
+        http_to_https = true
       }
     }
   }
